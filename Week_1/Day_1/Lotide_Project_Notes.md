@@ -9,4 +9,17 @@
 ## Assert function
 - `console.assert()` shows an error message in console - easy way to implelemt error checking? yep
 - _side note: this is running in node - can have multiple terminal instances open - could keep node open in order to maintain a function that was created there._
-- we can set up our own file that functions this way - ours is better becuase it will **also** give us a result if the assertion is correct, whereas console.assert() qill ouput nothing in those cases
+- we can set up our own file that functions this way - ours is better becuase it will **also** give us a result if the assertion is correct, whereas console.assert() will output nothing in those cases
+
+## Template literals / template strings
+ - "fancier strings" - a better way to concatenate? Oh yeah, looks way better!
+
+ example: 
+ ``` javascript
+ const name = "Alice";
+ console.log(`Hello, ${name}!`); // logs Hello, Alice!
+ ```
+
+ - to reiterate, the syntax is `${...}`, using backticks `(``)` around the rest of the string.
+ - referred to as *interpolated*
+ - 
