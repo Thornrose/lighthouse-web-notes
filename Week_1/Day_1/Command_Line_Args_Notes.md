@@ -10,7 +10,7 @@
 
 ## Adding Numbers Assignment
 
-- using `.slice(2)` will remove the first two elements of the array (paths)
+- using `process.argv.slice(2)` will remove the first two elements of the array (paths)
   - this will make the old [2] into the new [0]! remember
 - this execise also reminds of the above, that arguments are passed as strings - adding together would not be mathematical addition by default (i.e. 4 + 5 = 45)
 - there are multiple ways of converting strings to numbers, but in this case we use Number()
