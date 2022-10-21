@@ -67,6 +67,7 @@ person["dislikes"] = { food: spam, "e-mail": "spam" };
   - from MDN: " returns a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it)."
 
   - using `this` - you CAN also use the name of the object, but `this` is preferable in case you need to change the name of the object (don't need to switch every "this" usage)
+  - more `this` notes are HAND WRITTEN, check
 
 - using variable declaration on nested objects like a "bookmark" . A good example from Julian Atanassian
 
