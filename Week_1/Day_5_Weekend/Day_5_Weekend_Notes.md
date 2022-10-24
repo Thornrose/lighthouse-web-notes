@@ -229,3 +229,10 @@ describe("The function groupValidator()", () => {
 
 ## tech interviews
 
+- helps to prepare for REAL interviews
+
+- notice point of assesment - what could you work on. but you should'nt really need extra prep for the interviews
+
+- provide one-on-one mentor time
+
+- don't be afraid to say "I don't know" and ask questions to the interviewer
