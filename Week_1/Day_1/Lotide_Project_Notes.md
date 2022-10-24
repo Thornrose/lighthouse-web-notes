@@ -35,3 +35,6 @@
 - tail gets everything after [0]
 - to check assertion, i had it half right - first confirm length is as expected, then _also_ check each individual element value.
 
+
+# 
+## Refactoring with new skills from week 1
