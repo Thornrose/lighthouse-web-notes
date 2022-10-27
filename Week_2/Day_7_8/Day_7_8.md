@@ -129,3 +129,21 @@ const { myNumber, myString, myFunction } = require("./fileA)
 
 alias gst="git status"
 ^^^ ALIAS!!!!!
+
+# moving on to HTTP
+some HTTP Methods / VERBS:
+- GET - used to "get" data from the server
+
+- POST - used to create new data
+- PUT - editing existing data on server
+- DELETE - delete existing data
+
+### -
+
+URL = Uniform Resource Locator:
+![](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL/mdn-url-all.png)
+- a connection established does not count as a request. that's just us getting their attention first before saying anything
+- remember, we pretty much always need an "on connect" and "on data", first to send and then to receive and decide what to do with.
+- HTTP is not an alternative to TCP, but it is a language used over it.
+
+- could definitely return to page fetcher stretch.
