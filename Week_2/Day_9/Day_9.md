@@ -70,3 +70,7 @@ hoo boy. lesgo
 - - also a thought on planning. if we are setting something up to take a callback as an arg, then... we kinda need to know what that callback is going to be, don't we? I feel like the tricky part of pseudocoding or planning right now is we don't even know what to plan for.
 - using `curl` on stuff? whazzat
 - remember that `200` as an http code is the "all good" - o if it's !that, then... error?
+
+### back for more with promises
+- so thursday didn't go so well with the above - time to go bck and implement promises. Looks like weekend work will rely on this and review it a bit.
+- from compass "a promise represents the eventual result of an asynchronous operation"
