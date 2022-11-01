@@ -15,57 +15,57 @@
 
 // dog.teachMeSomething();
 
-{ // notes on intro to Classes, also getter and setter
-class Pizza {
+// { // notes on intro to Classes, also getter and setter
+// class Pizza {
 
-  constructor(size, crust = "soft") {             // constructor sets up default state and can add optional (or probably necessary) params
-    this.toppings = ["cheese"];
-    this.crust = crust;
-    console.log(`Fresh pizza coming right up!`);
-  };
+//   constructor(size, crust = "soft") {             // constructor sets up default state and can add optional (or probably necessary) params
+//     this.toppings = ["cheese"];
+//     this.crust = crust;
+//     console.log(`Fresh pizza coming right up!`);
+//   };
   
-  addTopping(topping) {       // metod - doesn't do anything right away, but defines a method action that can be used on a new instance
-    this.toppings.push(topping);
-  }
+//   addTopping(topping) {       // metod - doesn't do anything right away, but defines a method action that can be used on a new instance
+//     this.toppings.push(topping);
+//   }
 
-  set size(size) {     // setter
-    if (size === "s" || size === "m" || size === "l") {
-      this._size = size;
-    // else we could throw error, return false, etc
-    // we choose here to ignore all other values
-    }
-  }
+//   set size(size) {     // setter
+//     if (size === "s" || size === "m" || size === "l") {
+//       this._size = size;
+//     // else we could throw error, return false, etc
+//     // we choose here to ignore all other values
+//     }
+//   }
 
-  get price() {
-    const basePrice = 10;
-    const toppingPrice = 2;
-    return basePrice + (this.toppings.length * toppingPrice);
-  }
+//   get price() {
+//     const basePrice = 10;
+//     const toppingPrice = 2;
+//     return basePrice + (this.toppings.length * toppingPrice);
+//   }
 
-}
+// }
 
-// let pizza1 = new Pizza("large", "stuffed");
-// console.log(pizza1.toppings);
-// console.log(pizza1.crust);
-// console.log(pizza1.size);
-// pizza1.addTopping("mushrooms");
-// pizza1.addTopping("peppers");
-// console.log(pizza1.toppings);
+// // let pizza1 = new Pizza("large", "stuffed");
+// // console.log(pizza1.toppings);
+// // console.log(pizza1.crust);
+// // console.log(pizza1.size);
+// // pizza1.addTopping("mushrooms");
+// // pizza1.addTopping("peppers");
+// // console.log(pizza1.toppings);
 
-// let pizza2 = new Pizza();
+// // let pizza2 = new Pizza();
 
-const pizza3 = new Pizza();
-console.log(pizza3._size);
-pizza3.size = "m";        // setting
-console.log(pizza3._size);
-pizza3._size = "g";
-console.log(pizza3._size);
-pizza3.size = "l";
-console.log(pizza3._size);
-console.log(pizza3.price);         // getting
+// const pizza3 = new Pizza();
+// console.log(pizza3._size);
+// pizza3.size = "m";        // setting
+// console.log(pizza3._size);
+// pizza3._size = "g";
+// console.log(pizza3._size);
+// pizza3.size = "l";
+// console.log(pizza3._size);
+// console.log(pizza3.price);         // getting
 
 
-}
+// }
 
 
 // { // notes on extending classes (inheritance)
@@ -118,10 +118,19 @@ console.log(pizza3.price);         // getting
 
 
 {
-
-
-
-
-
-
+//function randomString() {
+  let r = (Math.random() + 1).toString(36).substring(7);
+  console.log('random', r);
 }
+
+//randomString();
+
+console.log((254).toString(16));
+console.log((2).toString(3));
+
+
+
+let randomString = Math.random().toString(36).replace('0.', '');
+console.log(randomString)
+let shortString = randomString.slice(0, 6);
+console.log(shortString);
