@@ -86,3 +86,33 @@ If we would like to run some code without it displaying on the page, then we can
   - url database is wiped when server restarted.
   - can't remove link or edit if misspelled?
   - much more.
+
+  ## Day 2
+  - installed nodemon - will auto-restart server when file is updated
+  - HTML forms only support GET and POST. else we can use method override or Ajax
+
+  ## Cookies in Express
+  - adjusting the app to have users, logging in, showing names
+  - adding `cookie parser`- need to `app.use`! can't just require and leave it
+
+  - PROBLEM: currently it is possible to register with blank email and password fields
+  - PROBLEM: register with existing email adds new user, should not
+
+  ## need to track down CURL commands
+  - `curl -u username:password URL` to log in?
+  - `curl -L URL` to follow redirect
+  - "POSTing with curl’s `-d` option will include a default header that looks like: Content-Type: application/x-www-form-urlencoded."
+  - "By default, curl doesn't send any cookies but you can add your own cookies via the `-b 'name=value'`"
+
+  - `-b` was the key to the solution! :
+    -`curl -i -X POST  -d "longURL=testurl.com" localhost:8080/urls/j6s8ls -b"user_id=undefined" `
+    - `i` displays some header info
+    - `X` .. not entirely sure? something to do with proxy?
+    - `d` involves settting an encoding to be able to submit data to a field
+    - `b` is for setting a cookie.
+
+    ## Hashing passwords with bcrypt
+    - might not work for previously added users (pre-registered test users)?
+
+    ## mocha/chai testing - 
+    - need to use `npx mocha` instead of npm test.
