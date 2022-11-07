@@ -87,18 +87,18 @@ If we would like to run some code without it displaying on the page, then we can
   - can't remove link or edit if misspelled?
   - much more.
 
-  ## Day 2
+## Day 2
   - installed nodemon - will auto-restart server when file is updated
   - HTML forms only support GET and POST. else we can use method override or Ajax
 
-  ## Cookies in Express
+## Cookies in Express
   - adjusting the app to have users, logging in, showing names
   - adding `cookie parser`- need to `app.use`! can't just require and leave it
 
   - PROBLEM: currently it is possible to register with blank email and password fields
   - PROBLEM: register with existing email adds new user, should not
 
-  ## need to track down CURL commands
+## need to track down CURL commands
   - `curl -u username:password URL` to log in?
   - `curl -L URL` to follow redirect
   - "POSTing with curl’s `-d` option will include a default header that looks like: Content-Type: application/x-www-form-urlencoded."
@@ -116,3 +116,24 @@ If we would like to run some code without it displaying on the page, then we can
 
     ## mocha/chai testing - 
     - need to use `npx mocha` instead of npm test.
+
+    ## FEEDBACK 
+    - project is done! got some notes back:
+      - could have separated databases into their own file. makes sense.
+      - could have mentioned 'npm start' / nodemon in "getting started" section of readme.
+      - `app.listen` should have been at bottom of file! interesting, i wonder why
+      - commit messages were good.
+
+## REVIEW W/ GARY
+- looks like some places where I passed  templatevars with only one variable - could have sent as just the thing sent over as an object?
+- res.send default type is html. but could also put html in the error message to link back to previous page! neat
+- getUserByEmail:
+  - could make a const inside for loop to actually define the user istead of doing database[user]...
+  - don't need to have backup `return underined`, if it doesn't return anything then.... it's already undefined
+  - could do `Object.keys(users)` to iterate - but could ALSO even better do `Object.values(users)`. object.values seems verrry useful.
+- post register:
+  - could have used ES6 object notation to assign values by name id, email, password instead of id: newUserID etc.
+- post login:
+  - checking password and email with or `||` technically better to send message "bad email OR password" that way bad actor can't tell what is wrong. (also fewer lines of code - one error message instead of two)
+- urlsForUser:
+  - could again use `object.keys`

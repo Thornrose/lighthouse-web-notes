@@ -117,20 +117,45 @@
 // }
 
 
-{
-//function randomString() {
-  let r = (Math.random() + 1).toString(36).substring(7);
-  console.log('random', r);
+
+// {
+// {
+// //function randomString() {
+//   let r = (Math.random() + 1).toString(36).substring(7);
+//   console.log('random', r);
+// }
+
+// //randomString();
+
+// console.log((254).toString(16));
+// console.log((2).toString(3));
+
+
+
+// let randomString = Math.random().toString(36).replace('0.', '');
+// console.log(randomString)
+// let shortString = randomString.slice(0, 6);
+// console.log(shortString);
+// }
+
+
+{ // depth-first traversal example
+  class Node {
+
+    constructor(data) {
+      this.data = data;
+      this.parent = null;
+      this.children = [];
+    }
+
+    depthFirstTraversal() {
+
+      console.log(this); // 1
+
+      for (const childNode of this.children) {
+        childNode.depthFirstTraversal(); // 2
+      }
+    }
+  }
+
 }
-
-//randomString();
-
-console.log((254).toString(16));
-console.log((2).toString(3));
-
-
-
-let randomString = Math.random().toString(36).replace('0.', '');
-console.log(randomString)
-let shortString = randomString.slice(0, 6);
-console.log(shortString);
