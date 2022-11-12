@@ -1,4 +1,5 @@
-// // notes on objects & `this.` :
+// notes on objects & `this.` :
+
 // const dog = {
 //   teachMeSomething: function() {
 //     if (dog === this) {
@@ -139,23 +140,113 @@
 // }
 
 
-{ // depth-first traversal example
-  class Node {
+// { // depth-first traversal example
+//   class Node {
 
-    constructor(data) {
-      this.data = data;
-      this.parent = null;
-      this.children = [];
-    }
+//     constructor(data) {
+//       this.data = data;
+//       this.parent = null;
+//       this.children = [];
+//     }
 
-    depthFirstTraversal() {
+//     depthFirstTraversal() {
 
-      console.log(this); // 1
+//       console.log(this); // 1
 
-      for (const childNode of this.children) {
-        childNode.depthFirstTraversal(); // 2
-      }
+//       for (const childNode of this.children) {
+//         childNode.depthFirstTraversal(); // 2
+//       }
+//     }
+//   }
+
+// }
+
+{exArr = [1,2,3,4,5,6,7,8,9];
+
+// measuring runtime in elementary operations for worst-case (number not in array): altogether, 3n + 4, where n is # of elements in array
+function search(array, number) {
+  let index = null; // 1
+
+  // for loop: 1; n+1; n
+  for (let i = 0; i < array.length; i++) {
+    if (number === array[i]) { // n
+      index = i; // only happens if found - so doesn't count in worst case 
+      break;
     }
   }
 
+  return index; // 1
+};
+
+console.log(search(exArr, 7));
+
+
+// binary search example (must be ordered/sorted array!!!), again doing the numbers for worst case: comes to 9log(n) + 3
+function binarySearch(array, item) {
+  let min = 0; // 1
+  let max = array.length - 1; // 1
+
+  while (true) { // log n
+    const middleIndex = Math.floor((min + max)/2.0); // (not sure why there is the .0?) // 3 log n (3 operations here)
+    const currentItem = array[middleIndex]; // log n
+
+    if (currentItem === item) { // log n
+      // found
+      return middleIndex;
+
+    } else if (currentItem < item) { // log n
+      // look to the right
+      min = middleIndex + 1;
+
+    } else { // log n
+      // look to the left
+      max = middleIndex - 1
+    }
+
+    if (min > max) { // log n
+      return null; // 1
+    }
+  }
 }
+}
+
+// QUADRATIC example, different scenario: 3 + 5n + 4n^2
+function arrayContainsSum(array, sum) {
+
+  for (let i = 0; i < array.length; i++) { // 1, 1+n, n, n
+    const element1 = array[i];
+
+    for (let ii = 0; ii < array.length; ii++) { // n, n+n^2, n^2
+
+      const element2 = array[ii]; // n^2
+
+      if (element1 + element2 === sum) { // n^2
+        return true;
+      }
+    }
+  }
+  return false; // 1
+}
+
+// LINEAR example: 4 + 7n
+function binArrayContainsSum(array, sum) {
+  let i = 0; // 1
+  let ii = array.length - 1; // last index // 1
+
+  while (i <= ii) { // n+1
+    const element1 = array[i]; // n
+    const element2 = array[ii]; // n
+    const currentSum = element1 + element2; // n
+
+    if (currentSum === sum) { // n
+      return true;
+    } else if (currentSum > sum ) { // n
+      ii--; // reduce max // n
+    } else {
+      i++;  // increase min
+    }
+  }
+
+  return false; // 1
+}
+
