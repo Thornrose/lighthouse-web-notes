@@ -59,5 +59,7 @@
 
 QUIZ NOTES
 
-- SELECT > FROM > GROUP BY > HAVING > LIMIT is correct syntax, haven't seen `LIMIT` before
+- `SELECT > FROM > GROUP BY > HAVING > LIMIT` is correct syntax, haven't seen `LIMIT` before
 - q4 was rude, but `CREATE` is a command after all, is my takeaway
+
+- also `GROUP BY` comes before `ORDER BY` (ORDER BY always would come last?)
