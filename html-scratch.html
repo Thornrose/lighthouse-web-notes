@@ -7,7 +7,6 @@
     $(function() {
       const $button = $('#load-more-posts');
       $button.on('click', function() {
-        console.log('Button clicked, performng ajax cal...');
         $.ajax('html-more-posts', {method: 'GET'})
         .then(function(morePostsHtml) {
           console.log('Success: ', morePostsHtml);
