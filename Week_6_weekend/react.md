@@ -13,6 +13,8 @@ command `nvm ls` lets you see your local versions of node (sounds like we might 
 
 command `nvm ls-remote` shows ALL available versions of node
 
+`nvm alias default` to change default version
+
 ## What is react?
 - "a javascript library for building user interfaces" - so, a library just like other libraries we've used and created
 - uses Javascript XML (JSX) as language
